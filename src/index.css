@@ -33,12 +33,13 @@ body {
   overflow-x: hidden;
   line-height: 1.5;
   margin: auto;
+  color: #fff;
+  font-weight: bold;
 }
 
 a {
   text-decoration: none;
   cursor: pointer;
-  color: #fff;
 }
 
 ul {
@@ -47,6 +48,107 @@ ul {
 
 p {
   font-size: 1.5rem;
+}
+
+.navbar {
+  overflow: hidden;
+  width: 100%;
+  height: 20vh;
+  max-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+.navbar__container {
+  padding-inline: 2rem;
+  max-width: 1700px;
+  position: fixed;
+  display: inherit;
+  width: inherit;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar__logo {
+  display: inherit;
+  font-family: "Cabin Sketch", cursive;
+  color: #fff;
+  font-size: 4rem;
+  align-self: center;
+  transition: color 500ms, transform 500ms;
+}
+.navbar__logo:hover {
+  color: #FCC108;
+  transform: scale(1.02);
+}
+.navbar .visible {
+  transition: transform 350ms;
+}
+.navbar .notvisible {
+  transform: translateY(-300%);
+  transition: transform 350ms;
+}
+.navbar__icon {
+  align-self: center;
+  font-size: 4rem;
+}
+.navbar__menu__icon {
+  all: unset;
+  cursor: pointer;
+  color: white;
+  font-size: 3rem;
+}
+.navbar__menu {
+  display: inherit;
+  gap: 3.5rem;
+}
+.navbar__menu__icon {
+  display: none;
+}
+@media (max-width: 50em) {
+  .navbar__menu {
+    flex-direction: column;
+    position: fixed;
+    inset: 0 0 0 30%;
+    background-color: #333333;
+    place-content: center;
+    transform: translateX(100%);
+    transition: transform 350ms;
+  }
+  .navbar__menu__item {
+    align-self: center;
+  }
+  .navbar__menu__icon {
+    display: flex;
+    position: relative;
+    align-self: center;
+    z-index: 5;
+    transition: color 500ms, transform 500ms;
+  }
+  .navbar__menu__icon:hover {
+    color: #FCC108;
+    transform: scale(1.02);
+  }
+  .navbar__menu[data-visible=true] {
+    transform: translateX(0);
+  }
+  .navbar__menu[data-visible=false] {
+    transform: translateX(100%);
+  }
+}
+.navbar__menu__link {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 600;
+  border-bottom: 2px transparent solid;
+  transition: color 500ms, border-bottom 500ms;
+  position: relative;
+}
+.navbar__menu__link:hover {
+  color: #FCC108;
+  border-bottom-color: #FCC108;
 }
 
 /*# sourceMappingURL=index.css.map */

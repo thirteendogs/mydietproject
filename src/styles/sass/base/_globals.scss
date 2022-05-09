@@ -35,12 +35,13 @@ body {
    overflow-x: hidden;
    line-height: 1.5;
    margin: auto;
+   color: $light-clr;
+   font-weight: bold;
 }
 
 a {
    text-decoration: none;
    cursor: pointer;
-   color: $light-clr;
 }
 
 ul {

@@ -1,0 +1,126 @@
+@use '../utils/variables' as *;
+
+.navbar {
+   overflow: hidden;
+   width: 100%;
+   height: 20vh;
+   max-height: $header-height;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   z-index: 10;
+   
+   &__container {
+      padding-inline: 2rem;
+      max-width: $content-max-width;
+      position: fixed;
+      display: inherit;
+      width: inherit;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__logo {
+      display: inherit;
+      font-family: $sketch-font;
+      color: $light-clr;
+      font-size: $font-size-xxl;
+      align-self: center;
+      transition: color 500ms, transform 500ms;
+      
+      &:hover {
+         color: $yellow-clr;
+         transform: scale(1.02);
+      }
+   }
+
+   .visible {
+       
+       transition: transform 350ms;
+    }
+    .notvisible {
+       transform: translateY(-300%);
+       transition: transform 350ms;
+    }
+
+   &__icon {
+      align-self: center;
+      font-size: 4rem;
+   }
+
+   &__menu__icon {    
+      all: unset;
+      cursor: pointer;
+      color: white;
+      font-size: 3rem;
+   }
+
+   &__menu {
+      display: inherit;
+      gap: 3.5rem;
+
+      &__icon {
+         display: none;
+      }      
+      
+   }
+
+
+   @media (max-width: 50em) {
+      &__menu {
+         flex-direction: column;
+         position: fixed;
+         inset: 0 0 0 30%;
+         background-color: $dark-clr;
+         place-content: center;
+         transform: translateX(100%);
+         transition: transform 350ms;
+
+
+         &__item {
+            align-self: center;
+         }
+
+         &__icon {
+            display: flex;
+            position: relative;
+            align-self: center;
+            z-index: 5;
+            transition: color 500ms, transform 500ms;
+      
+            &:hover {
+               color: $yellow-clr;
+               transform: scale(1.02);
+            }
+         }
+      }
+
+      &__menu[data-visible='true'] {
+         transform: translateX(0);
+      }
+      &__menu[data-visible='false'] {
+         transform: translateX(100%);
+      }
+
+   }
+
+   &__menu__link {
+      font-family: $sketch-font;
+      font-size: $font-size-md;
+      color: $light-clr;
+      font-weight: 600;
+      border-bottom: 2px transparent solid;
+      transition: color 500ms, border-bottom 500ms;
+      position: relative;
+
+      &:hover {
+         color: $yellow-clr;
+         border-bottom-color: $yellow-clr ;
+      }
+
+   }
+   
+}
+
+
