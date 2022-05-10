@@ -12,10 +12,8 @@ const Navbar = () => {
     const currentScrollPos = window.pageYOffset
     if (prevScrollpos > currentScrollPos) {
       setShow(true)
-      setClick(false)
     } else {
       setShow(false)
-      setClick(false)
     }
     prevScrollpos = currentScrollPos
   }

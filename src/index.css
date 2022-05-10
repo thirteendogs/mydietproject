@@ -377,5 +377,37 @@ p {
     margin-bottom: 2rem;
   }
 }
+.ingredientsList {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.ingredientsList__title {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 3rem;
+}
+.ingredientsList__box {
+  background-color: #fff;
+  color: #333333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+  width: 100%;
+  max-width: 20rem;
+  height: 40rem;
+  max-height: 50rem;
+  overflow-y: scroll;
+  padding: 1.5rem;
+}
+.ingredientsList__box::-webkit-scrollbar {
+  width: 0.5vw;
+}
+.ingredientsList__box::-webkit-scrollbar-thumb {
+  background-color: #FCC108;
+  border-radius: 100vw;
+}
+.ingredientsList__box::-webkit-scrollbar-track {
+  background-color: #333333;
+}
 
 /*# sourceMappingURL=index.css.map */

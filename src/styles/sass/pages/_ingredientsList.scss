@@ -1,0 +1,39 @@
+@use '../utils/variables' as *;
+
+.ingredientsList {
+   display: flex;
+   flex-direction: column;
+   place-items: center;
+
+   &__title {
+      font-family: $sketch-font;
+      font-size: $font-size-lg;
+   }
+
+   &__box {
+      background-color: $light-clr;
+      color: $dark-clr;
+      font-size: $font-size-md;
+      font-weight: bold;
+      border-radius: $sketch-card;
+      width: 100%;
+      max-width: 20rem;
+      height: 40rem;
+      max-height: 50rem;
+      overflow-y: scroll;
+      padding: 1.5rem;
+
+      &::-webkit-scrollbar{
+         width:0.5vw;
+      }
+
+      &::-webkit-scrollbar-thumb{
+         background-color: $yellow-clr;
+         border-radius: 100vw;
+      }
+
+      &::-webkit-scrollbar-track{
+         background-color: $dark-clr;
+      }
+   }
+}
