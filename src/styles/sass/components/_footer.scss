@@ -1,0 +1,19 @@
+@use '../utils/variables' as *;
+
+.footer {
+   width: 100%;
+   display: flex;
+   place-content: center;
+   position: fixed;
+   bottom: 0;
+   max-width: $content-max-width;
+   
+
+   &__text {
+      padding-bottom: 1rem;
+      color: $light-clr;
+      font-family: $hand-font;
+      font-weight: bold;
+      font-size: 1rem;
+   }
+}
