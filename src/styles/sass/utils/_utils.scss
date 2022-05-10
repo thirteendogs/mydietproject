@@ -54,3 +54,24 @@
    
 }
 
+.table {
+   width: 100%;
+   max-width: 35rem;
+   margin-bottom: 1rem;
+   border-collapse: collapse;
+   vertical-align: top;
+
+   td, th {
+      padding: .75rem;
+      text-align: center;
+      border-top: 2px solid #dee2e6;
+      height: 2rem;
+   }
+
+
+   tfoot, thead {
+      border-top: 5px solid #dee2e6;
+
+   }
+}
+

@@ -4,13 +4,12 @@
    width: 100%;
    display: flex;
    place-content: center;
-   position: fixed;
+   margin-top: 2rem;
    bottom: 0;
    max-width: $content-max-width;
    
 
    &__text {
-      padding-bottom: 1rem;
       color: $light-clr;
       font-family: $hand-font;
       font-weight: bold;

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import ingredientService from '../../services/ingredients'
 import IngredientInfo from '../globals/IngredientInfo'
+import MealPrep from '../globals/MealPrep'
 
 const IngredientChoose = () => {
   const [ingredients, setIngredients] = useState([])
@@ -42,7 +43,7 @@ const IngredientChoose = () => {
   const handleAddIngredient = (e) => {
     e.preventDefault()
 
-    const maxIngredients = 5
+    const maxIngredients = 10
 
     const newMeal = {
       name: selectedIngredient.name,
@@ -73,7 +74,7 @@ const IngredientChoose = () => {
    <main className='ingredients'>
      {/* CHOOSE YOUR INGREDIENT SECTION */}
       <section className='ingredientsChoose card'>
-            <h2 className='ingredientsChoose__title'>Choose your ingredient</h2>
+            <h2 className='ingredientsChoose__title'>Select your ingredients</h2>
 
                <form className='ingredientsChoose__form'onSubmit={handleAddIngredient}>
                   <label className='ingredientsChoose__form__label' htmlFor="igredient">Ingredient :</label>
@@ -94,6 +95,8 @@ const IngredientChoose = () => {
                   />
                </div>
       </section>
+      {/* PLAN YOUR MEAL SECTION */}
+      <MealPrep meals={meals} mealsTotalMacros={mealsTotalMacros}/>
 
    </main>
   )

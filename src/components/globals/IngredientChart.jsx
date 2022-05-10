@@ -18,7 +18,7 @@ const IngredientChart = ({ proteins, carbohydrates, fats }) => {
   const COLORS = ['#DC3544', '#2CA2B8', '#FCC108']
 
   return (
-     <PieChart width={400} height={200}>
+     <PieChart width={400} height={250}>
       <Pie
         data={data}
         labelLine={true}

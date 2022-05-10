@@ -19,12 +19,12 @@ html::-webkit-scrollbar {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #333333;
+  background-color: #FCC108;
   border-radius: 100vw;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #FCC108;
+  background-color: #333333;
 }
 
 body {
@@ -100,6 +100,23 @@ p {
   margin-inline: 0.5rem;
   border-radius: 100px 25px 150px 25px/25px 150px 25px 150px;
   padding: 0.5rem;
+}
+
+.table {
+  width: 100%;
+  max-width: 35rem;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  vertical-align: top;
+}
+.table td, .table th {
+  padding: 0.75rem;
+  text-align: center;
+  border-top: 2px solid #dee2e6;
+  height: 2rem;
+}
+.table tfoot, .table thead {
+  border-top: 5px solid #dee2e6;
 }
 
 .navbar {
@@ -207,12 +224,11 @@ p {
   width: 100%;
   display: flex;
   place-content: center;
-  position: fixed;
+  margin-top: 2rem;
   bottom: 0;
   max-width: 1700px;
 }
 .footer__text {
-  padding-bottom: 1rem;
   color: #fff;
   font-family: "Handlee", cursive;
   font-weight: bold;
@@ -233,34 +249,67 @@ p {
   height: 100%;
   min-height: 50rem;
 }
-
-.ingredientsChoose {
+.ingredients .ingredientsChoose {
   display: inherit;
   flex-direction: column;
   padding: 1.5rem;
+  margin-right: 1rem;
+  min-width: 35rem;
 }
-.ingredientsChoose__title {
+.ingredients .ingredientsChoose__title {
   place-self: center;
   font-family: "Cabin Sketch", cursive;
   font-size: 3rem;
   margin-bottom: 1rem;
 }
-.ingredientsChoose__form {
+.ingredients .ingredientsChoose__form {
   display: inherit;
   flex-direction: column;
   min-height: 18rem;
 }
-.ingredientsChoose__form__label {
+.ingredients .ingredientsChoose__form__label {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
-.ingredientsChoose__charm {
+.ingredients .ingredientsChoose__charm {
   display: flex;
   flex-direction: column;
   place-items: center;
   height: 20rem;
 }
-.ingredientsChoose__charm__title {
+.ingredients .ingredientsChoose__charm__title {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 1.5rem;
+}
+.ingredients .mealPrep {
+  display: inherit;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin-left: 1rem;
+  width: 100%;
+}
+.ingredients .mealPrep__title {
+  place-self: center;
+  font-family: "Cabin Sketch", cursive;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.ingredients .mealPrep__wrapper {
+  display: inherit;
+  flex-direction: row;
+  height: 40rem;
+  justify-content: space-between;
+}
+.ingredients .mealPrep__wrapper__table {
+  width: 100%;
+}
+.ingredients .mealPrep__charm {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  place-self: center;
+}
+.ingredients .mealPrep__charm__title {
   font-family: "Cabin Sketch", cursive;
   font-size: 1.5rem;
 }
