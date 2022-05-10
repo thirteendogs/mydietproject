@@ -46,12 +46,22 @@
    background-color: $blue-clr;
 }
 
+.bg-green {
+   background-color: $green-clr;
+}
+
 .badge {
    margin-top: 2rem;
    margin-inline: .5rem;
    border-radius: $sketch-form;
    padding: .5rem;
-   
+   display: grid;
+   place-content: center;
+}
+
+.flex-wrap {
+   display: flex;
+   flex-wrap: wrap;
 }
 
 .table {

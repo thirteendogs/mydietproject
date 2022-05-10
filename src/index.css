@@ -95,11 +95,22 @@ p {
   background-color: #2CA2B8;
 }
 
+.bg-green {
+  background-color: #28a745;
+}
+
 .badge {
   margin-top: 2rem;
   margin-inline: 0.5rem;
   border-radius: 100px 25px 150px 25px/25px 150px 25px 150px;
   padding: 0.5rem;
+  display: grid;
+  place-content: center;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .table {
@@ -386,7 +397,7 @@ p {
 }
 .ingredientsList__title {
   font-family: "Cabin Sketch", cursive;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 .ingredientsList__box {
   background-color: #fff;
@@ -410,6 +421,63 @@ p {
 }
 .ingredientsList__box::-webkit-scrollbar-track {
   background-color: #333333;
+}
+
+.meals {
+  display: flex;
+  flex-direction: column;
+  min-height: 50rem;
+}
+.meals__title {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 4rem;
+  place-self: center;
+}
+.meals__box {
+  display: flex;
+  flex-wrap: wrap;
+  place-content: center;
+}
+.meals__card {
+  padding: 1rem;
+  border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+  border: 3px #FCC108 solid;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+.meals__card__title {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 1.5rem;
+  justify-items: center;
+  border-bottom: 3px #fff solid;
+  width: fit-content;
+  margin-bottom: 1rem;
+}
+.meals__card__ingredients {
+  display: flex;
+  flex-wrap: wrap;
+}
+.meals__card__ingredients__text {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 500px) {
+  .meals__card {
+    min-width: 20rem;
+  }
+  .meals__card__badges, .meals__card__ingredients {
+    display: flex;
+    flex-direction: column;
+  }
+  .meals__card__badges__text, .meals__card__ingredients__text {
+    margin-inline: 0;
+    display: grid;
+    place-content: center;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

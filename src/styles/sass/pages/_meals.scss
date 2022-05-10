@@ -1,0 +1,68 @@
+@use '../utils/variables' as *;
+
+.meals {
+   display: flex;
+   flex-direction: column;
+   min-height: 50rem;
+
+   &__title {
+      font-family: $sketch-font;
+      font-size: $font-size-xxl;
+      place-self: center;
+   }
+
+   &__box {
+      display: flex;
+      flex-wrap: wrap;
+      place-content: center;
+   }
+
+   &__card {
+      padding: 1rem;
+      border-radius: $sketch-card;
+      border: 3px $yellow-clr solid;
+      margin: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      place-items: center;
+
+      &__title {
+         font-family: $sketch-font;
+         font-size: $font-size-md;
+         justify-items: center;
+         border-bottom: 3px $light-clr solid;
+         width: fit-content;
+         margin-bottom: 1rem;
+      }
+
+      &__ingredients {
+         display: flex;
+         flex-wrap: wrap;
+
+         &__text{
+            font-size: $font-size-sm;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+         }
+      }
+   }
+}
+
+@media (max-width: 500px) {
+
+   .meals__card {
+      min-width: 20rem;
+      &__badges,
+      &__ingredients {
+         display: flex;
+         flex-direction: column;
+         &__text {
+            margin-inline: 0;
+            display: grid;
+            place-content: center;
+         }
+      }
+   }
+
+}
+            
