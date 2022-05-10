@@ -22,6 +22,7 @@
          font-family: $sketch-font;
          font-size: $font-size-lg;
          margin-bottom: 1rem;
+         border-bottom: .3rem $light-clr solid;
       }
 
       &__form {
@@ -44,6 +45,7 @@
          &__title {
             font-family: $sketch-font;
             font-size: $font-size-md;
+            border-bottom: .3rem $light-clr solid;
          }
       }
    }
@@ -61,6 +63,7 @@
          font-family: $sketch-font;
          font-size: $font-size-lg;
          margin-bottom: 1rem;
+         border-bottom: .3rem $light-clr solid;
       }  
 
       &__wrapper {
@@ -84,6 +87,7 @@
          &__title {
             font-family: $sketch-font;
             font-size: $font-size-md;
+            border-bottom: .3rem $light-clr solid;
          }
       }      
    }
@@ -122,8 +126,21 @@
 
    @media (max-width: 500px) {
       .ingredients {
+         .ingredientsChoose {
+            &__title {
+               font-size: $font-size-md;
+            }
+            
+         }
+
          .mealPrep {
             margin-left: 0;
+
+            &__title {
+               font-size: $font-size-md;
+               margin-bottom: 2rem;
+            }
+
             &__wrapper {
                flex-direction: column;
                align-self: center;

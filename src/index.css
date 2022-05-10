@@ -277,6 +277,7 @@ p {
   font-family: "Cabin Sketch", cursive;
   font-size: 3rem;
   margin-bottom: 1rem;
+  border-bottom: 0.3rem #fff solid;
 }
 .ingredients .ingredientsChoose__form {
   display: inherit;
@@ -296,6 +297,7 @@ p {
 .ingredients .ingredientsChoose__charm__title {
   font-family: "Cabin Sketch", cursive;
   font-size: 1.5rem;
+  border-bottom: 0.3rem #fff solid;
 }
 .ingredients .mealPrep {
   display: inherit;
@@ -309,6 +311,7 @@ p {
   font-family: "Cabin Sketch", cursive;
   font-size: 3rem;
   margin-bottom: 1rem;
+  border-bottom: 0.3rem #fff solid;
 }
 .ingredients .mealPrep__wrapper {
   display: inherit;
@@ -329,6 +332,7 @@ p {
 .ingredients .mealPrep__charm__title {
   font-family: "Cabin Sketch", cursive;
   font-size: 1.5rem;
+  border-bottom: 0.3rem #fff solid;
 }
 
 @media (max-width: 1450px) {
@@ -354,8 +358,15 @@ p {
   }
 }
 @media (max-width: 500px) {
+  .ingredients .ingredientsChoose__title {
+    font-size: 1.5rem;
+  }
   .ingredients .mealPrep {
     margin-left: 0;
+  }
+  .ingredients .mealPrep__title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
   .ingredients .mealPrep__wrapper {
     flex-direction: column;
