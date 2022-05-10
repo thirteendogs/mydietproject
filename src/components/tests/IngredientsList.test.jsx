@@ -8,7 +8,7 @@ describe('IngredientsList component', () => {
     render(<IngredientsList />)
   })
 
-  test('IngredientsList links to have correct text', () => {
+  test('IngredientsList to have correct text', () => {
     const title = screen.getAllByText('Ingredients list')
 
     expect(title).toBeDefined()
