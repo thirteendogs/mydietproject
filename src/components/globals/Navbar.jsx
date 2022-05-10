@@ -42,9 +42,6 @@ const Navbar = () => {
             <li className='navbar__menu__item'>
               <Link to='/ingredientsList' className='navbar__menu__link'>INGREDIENTS</Link>
             </li>
-            <li className='navbar__menu__item'>
-               <Link to='/guide' className='navbar__menu__link'>GUIDE</Link>
-            </li>
           </ul>
 
         </div>

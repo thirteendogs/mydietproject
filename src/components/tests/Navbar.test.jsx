@@ -12,11 +12,9 @@ describe('Navbar component', () => {
   test('Navbar links to have correct text', () => {
     const mealsLink = screen.getAllByText('MEALS')
     const ingredientsLink = screen.getAllByText('INGREDIENTS')
-    const guideLink = screen.getAllByText('GUIDE')
 
     expect(mealsLink).toBeDefined()
     expect(ingredientsLink).toBeDefined()
-    expect(guideLink).toBeDefined()
   })
 
   test('Navbar icon on mobile version change when click', () => {
