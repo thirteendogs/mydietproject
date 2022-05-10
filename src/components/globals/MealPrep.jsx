@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import IngredientInfo from './IngredientInfo'
 
 const MealPrep = ({ meals, mealsTotalMacros }) => {
+  const handleAddMeal = () => {
+    console.log('Meal added!')
+  }
   return (
       <section className='mealPrep card'>
             <h2 className='mealPrep__title'>Plan your meal</h2>
@@ -52,6 +55,8 @@ const MealPrep = ({ meals, mealsTotalMacros }) => {
                   carbohydrates={mealsTotalMacros.carbohydrates}
                   fats={mealsTotalMacros.fats}
                 />
+
+                <button className='btn' onClick={handleAddMeal}>Add Meal</button>
 
                 </div>
             </article>
