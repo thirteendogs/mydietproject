@@ -1,7 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-
-import Footer from '../globals/Footer'
+import Footer from '../../globals/Footer'
 
 describe('Footer component', () => {
   beforeEach(() => {

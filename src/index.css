@@ -326,6 +326,7 @@ p {
   display: flex;
   flex-direction: column;
   place-items: center;
+  align-items: center;
   place-self: center;
   height: 100%;
 }
@@ -381,6 +382,7 @@ p {
   display: flex;
   flex-direction: column;
   place-items: center;
+  min-height: 50rem;
 }
 .ingredientsList__title {
   font-family: "Cabin Sketch", cursive;

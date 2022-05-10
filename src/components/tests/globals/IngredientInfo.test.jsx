@@ -1,9 +1,8 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
+import IngredientInfo from '../../globals/IngredientInfo'
 
-import IngredientChart from '../globals/IngredientChart'
-
-describe('IngredientChart component', () => {
+describe('IngredientInfo component', () => {
   const ingredient = {
     proteins: 10,
     carbohydrates: 10,
@@ -11,14 +10,14 @@ describe('IngredientChart component', () => {
   }
 
   beforeEach(() => {
-    render(<IngredientChart
+    render(<IngredientInfo
                proteins={ingredient.proteins}
                carbohydrates={ingredient.carbohydrates}
                fats={ingredient.fats}
             />)
   })
 
-  test('IngredientChart to have correct text', () => {
+  test('IngredientInfo to have correct text', () => {
     setTimeout(() => {
       const proteinsText = screen.getAllByText('10')
       const carbohydratesText = screen.getAllByText('10')
