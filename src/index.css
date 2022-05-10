@@ -104,8 +104,6 @@ p {
   margin-inline: 0.5rem;
   border-radius: 100px 25px 150px 25px/25px 150px 25px 150px;
   padding: 0.5rem;
-  display: grid;
-  place-content: center;
 }
 
 .flex-wrap {
@@ -135,6 +133,11 @@ p {
     padding-inline: 0.1rem;
     border-top: 2px solid #dee2e6;
     height: 2rem;
+  }
+
+  .badge {
+    display: grid;
+    place-content: center;
   }
 }
 .navbar {
