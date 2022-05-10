@@ -1,6 +1,9 @@
 @use 'base/globals';
 
+@use 'utils/utils';
+
 @use 'components/navbar';
 @use 'components/footer';
+@use 'components/ingredientInfo';
 
 @use 'pages/ingredientsChoose';

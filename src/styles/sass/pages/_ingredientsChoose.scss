@@ -1,6 +1,44 @@
 @use '../utils/variables' as *;
 
+.ingredients {
+   display: flex;
+   padding-inline: 2rem;
+   height: 100%;
+   min-height: 50rem;
+}
+
 .ingredientsChoose {
-   border: 1px red solid;
-   
+   display: inherit;
+   flex-direction: column;
+   padding: 1.5rem;
+
+   &__title {
+      place-self: center;
+      font-family: $sketch-font;
+      font-size: $font-size-lg;
+      margin-bottom: 1rem;
+   }
+
+   &__form {
+      display: inherit;
+      flex-direction: column;
+      min-height: 18rem;
+
+      &__label {
+         font-size: $font-size-md;
+         margin-bottom:.5rem ;
+      }
+   }
+
+   &__charm {
+      display: flex;
+      flex-direction: column;
+      place-items: center;
+      height: 20rem;
+
+      &__title {
+         font-family: $sketch-font;
+         font-size: $font-size-md;
+      }
+   }
 }

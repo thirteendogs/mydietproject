@@ -50,6 +50,58 @@ p {
   font-size: 1.5rem;
 }
 
+.card {
+  border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+  border: 2px #fff solid;
+}
+
+.input {
+  margin-bottom: 1.5rem;
+  font-family: "Handlee", cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border: 1px #fff solid;
+  border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+}
+
+.btn {
+  border: 2px #28a745 solid;
+  border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+  width: fit-content;
+  background-color: transparent;
+  color: #28a745;
+  font-family: "Handlee", cursive;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: color 300ms, background-color 300ms;
+}
+.btn:hover {
+  color: #fff;
+  background-color: #28a745;
+}
+
+.bg-red {
+  background-color: #DC3544;
+}
+
+.bg-yellow {
+  background-color: #FCC108;
+}
+
+.bg-blue {
+  background-color: #2CA2B8;
+}
+
+.badge {
+  margin-top: 2rem;
+  margin-inline: 0.5rem;
+  border-radius: 100px 25px 150px 25px/25px 150px 25px 150px;
+  padding: 0.5rem;
+}
+
 .navbar {
   overflow: hidden;
   width: 100%;
@@ -139,7 +191,7 @@ p {
 }
 .navbar__menu__link {
   font-family: "Cabin Sketch", cursive;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #fff;
   font-weight: 600;
   border-bottom: 2px transparent solid;
@@ -167,8 +219,50 @@ p {
   font-size: 1rem;
 }
 
+.chart {
+  margin-top: 1.5rem;
+}
+
+.badges__group {
+  margin-top: 1.5rem;
+}
+
+.ingredients {
+  display: flex;
+  padding-inline: 2rem;
+  height: 100%;
+  min-height: 50rem;
+}
+
 .ingredientsChoose {
-  border: 1px red solid;
+  display: inherit;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+.ingredientsChoose__title {
+  place-self: center;
+  font-family: "Cabin Sketch", cursive;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.ingredientsChoose__form {
+  display: inherit;
+  flex-direction: column;
+  min-height: 18rem;
+}
+.ingredientsChoose__form__label {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.ingredientsChoose__charm {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  height: 20rem;
+}
+.ingredientsChoose__charm__title {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=index.css.map */

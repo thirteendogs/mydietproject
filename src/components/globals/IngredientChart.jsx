@@ -27,7 +27,7 @@ const IngredientChart = ({ proteins, carbohydrates, fats }) => {
         fill="#050418"
         dataKey="value"
         cx="50%" cy="50%"
-
+        fontSize="1.5rem"
       >
         {data.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

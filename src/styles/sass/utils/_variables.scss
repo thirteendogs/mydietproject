@@ -6,7 +6,7 @@ $website-height: 1400px;
 $content-max-width: 1700px;
 $header-height: 120px;
 $font-size-sm: 1rem;
-$font-size-md: 2rem;
+$font-size-md: 1.5rem;
 $font-size-lg: 3rem;
 $font-size-xxl: 4rem;
 $font-size-text: 1.5rem;
@@ -20,3 +20,7 @@ $green-clr:#28a745;
 $red-clr: #DC3544;
 $yellow-clr: #FCC108;
 $blue-clr: #2CA2B8;
+
+// FORMS
+$sketch-form: 100px 25px 150px 25px/25px 150px 25px 150px;
+$sketch-card: 255px 25px 225px 25px/25px 225px 25px 255px;

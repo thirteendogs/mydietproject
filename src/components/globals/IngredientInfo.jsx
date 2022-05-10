@@ -5,7 +5,7 @@ import IngredientChart from './IngredientChart'
 const IngredientInfo = ({ proteins, fats, carbohydrates }) => {
   return (
    <>
-      <div className='d-flex justify-content-center'>
+      <div className='chart'>
          {
             <IngredientChart
             proteins={proteins}
@@ -14,10 +14,11 @@ const IngredientInfo = ({ proteins, fats, carbohydrates }) => {
             />
          }
       </div>
-      <div className="d-flex justify-content-center mt-4">
-         <span className="badge bg-danger mr-2 p-2 fs-6">Proteins</span>
-         <span className="badge bg-info mr-2 p-2 fs-6">Carbohydrates</span>
-         <span className="badge bg-warning p-2 fs-6">Fats</span>
+      <div className="badges__group">
+
+         <span className="badge bg-red">Proteins</span>
+         <span className="badge bg-blue">Carbohydrates</span>
+         <span className="badge bg-yellow">Fats</span>
       </div>
    </>
   )
