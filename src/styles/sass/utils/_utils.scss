@@ -75,3 +75,13 @@
    }
 }
 
+@media (max-width: 500px) {
+   .table {
+      td, th {
+         padding-inline: 0.10rem;
+         border-top: 2px solid #dee2e6;
+         height: 2rem;
+      }
+   }
+}
+

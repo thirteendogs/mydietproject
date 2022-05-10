@@ -119,6 +119,13 @@ p {
   border-top: 5px solid #dee2e6;
 }
 
+@media (max-width: 500px) {
+  .table td, .table th {
+    padding-inline: 0.1rem;
+    border-top: 2px solid #dee2e6;
+    height: 2rem;
+  }
+}
 .navbar {
   overflow: hidden;
   width: 100%;
@@ -224,7 +231,7 @@ p {
   width: 100%;
   display: flex;
   place-content: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   bottom: 0;
   max-width: 1700px;
 }
@@ -243,6 +250,13 @@ p {
   margin-top: 1.5rem;
 }
 
+@media (max-width: 500px) {
+  .badges__group {
+    margin-top: 0.5rem;
+    display: inherit;
+    flex-direction: column;
+  }
+}
 .ingredients {
   display: flex;
   padding-inline: 2rem;
@@ -254,7 +268,9 @@ p {
   flex-direction: column;
   padding: 1.5rem;
   margin-right: 1rem;
-  min-width: 35rem;
+  width: 100%;
+  max-width: 35rem;
+  min-height: 50rem;
 }
 .ingredients .ingredientsChoose__title {
   place-self: center;
@@ -275,7 +291,7 @@ p {
   display: flex;
   flex-direction: column;
   place-items: center;
-  height: 20rem;
+  min-height: 20rem;
 }
 .ingredients .ingredientsChoose__charm__title {
   font-family: "Cabin Sketch", cursive;
@@ -297,7 +313,7 @@ p {
 .ingredients .mealPrep__wrapper {
   display: inherit;
   flex-direction: row;
-  height: 40rem;
+  min-height: 40rem;
   justify-content: space-between;
 }
 .ingredients .mealPrep__wrapper__table {
@@ -308,10 +324,47 @@ p {
   flex-direction: column;
   place-items: center;
   place-self: center;
+  height: 100%;
 }
 .ingredients .mealPrep__charm__title {
   font-family: "Cabin Sketch", cursive;
   font-size: 1.5rem;
+}
+
+@media (max-width: 1450px) {
+  .ingredients {
+    flex-direction: column;
+  }
+  .ingredients .ingredientsChoose {
+    width: 100%;
+    max-width: 35rem;
+    margin-inline: auto;
+    margin-bottom: 3rem;
+  }
+}
+@media (max-width: 840px) {
+  .ingredients .mealPrep__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ingredients .mealPrep__wrapper__table {
+    min-width: none;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .ingredients .mealPrep {
+    margin-left: 0;
+  }
+  .ingredients .mealPrep__wrapper {
+    flex-direction: column;
+    align-self: center;
+  }
+  .ingredients .mealPrep__wrapper__table {
+    max-width: 15rem;
+    margin-bottom: 2rem;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

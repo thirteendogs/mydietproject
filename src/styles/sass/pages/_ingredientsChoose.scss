@@ -12,7 +12,10 @@
       flex-direction: column;
       padding: 1.5rem;
       margin-right: 1rem;
-      min-width: 35rem;
+      width: 100%;
+      max-width: 35rem;
+
+      min-height: 50rem;
 
       &__title {
          place-self: center;
@@ -36,7 +39,7 @@
          display: flex;
          flex-direction: column;
          place-items: center;
-         height: 20rem;
+         min-height: 20rem;
 
          &__title {
             font-family: $sketch-font;
@@ -63,7 +66,7 @@
       &__wrapper {
          display: inherit;
          flex-direction: row;
-         height: 40rem;
+         min-height: 40rem;
          justify-content: space-between;
 
          &__table {
@@ -76,6 +79,7 @@
          flex-direction: column;
          place-items: center;
          place-self: center;
+         height: 100%;
 
          &__title {
             font-family: $sketch-font;
@@ -83,5 +87,52 @@
          }
       }      
    }
-
 }
+
+   @media (max-width: 1450px) {
+      .ingredients {
+         flex-direction: column;
+
+         .ingredientsChoose {
+            width: 100%;
+            max-width: 35rem;
+            margin-inline: auto;
+            margin-bottom: 3rem;
+            
+         }
+      }
+   }
+
+   @media (max-width: 840px) {
+      .ingredients {
+         .mealPrep {
+            &__wrapper {
+               flex-direction: column;
+               align-items: center;
+               
+               &__table {
+                  min-width: none;
+                  width: 100%;
+                  margin-bottom: 2rem;
+               }
+         }
+      }
+   }
+   }
+
+   @media (max-width: 500px) {
+      .ingredients {
+         .mealPrep {
+            margin-left: 0;
+            &__wrapper {
+               flex-direction: column;
+               align-self: center;
+               
+               &__table {
+                  max-width: 15rem;
+                  margin-bottom: 2rem;
+               }
+         }
+      }
+   }
+   }

@@ -16,9 +16,9 @@ const IngredientInfo = ({ proteins, fats, carbohydrates }) => {
       </div>
       <div className="badges__group">
 
-         <span className="badge bg-red">Prot: {proteins}g</span>
-         <span className="badge bg-blue">Carbs: {carbohydrates}g</span>
-         <span className="badge bg-yellow">Fats: {fats}g</span>
+         <span className="badge bg-red">Prots: { Number(proteins).toFixed(1) }g</span>
+         <span className="badge bg-blue">Carbs: { Number(carbohydrates).toFixed(1) }g</span>
+         <span className="badge bg-yellow">Fats: { Number(fats).toFixed(1) }g</span>
       </div>
    </>
   )
