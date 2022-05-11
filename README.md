@@ -4,6 +4,14 @@
 ### Frontend tech is: React.js, SASS, axios, react-testing-library and cypress
 ### Backend tech is: node with mongo and mongoose
 
+##  HOW DOES IT WORK
+### Choose de ingredient and its quantity, after it you can see how the charm is updated, then press Add Ingredient button.
+### Now you can see that the ingredient went to the table form Plan you meal section
+### You can add up to 10 ingredients per meal
+### Once you are done adding ingredients press the button Add Meal
+### Now the meal is saved on the Meal section. 
+### Navigate to Meal section from de navbar and there it is, your saved meal. :)
+
 ##  SCRIPTS
 ### npm start (to start the app)
 ### npm run sass (to start sass engine)
