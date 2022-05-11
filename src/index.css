@@ -500,5 +500,47 @@ p {
     place-content: center;
   }
 }
+.login {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+}
+.login__title {
+  position: absolute;
+  top: 0;
+  font-family: "Cabin Sketch", cursive;
+  font-size: 4rem;
+  place-self: center;
+}
+.login__box {
+  border: 3px #FCC108 solid;
+  border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+  padding: 2rem;
+}
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+.login__form__label {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.login__form__input {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding-block: 0.5rem;
+}
+.login__form .btn-login {
+  margin-top: 0.5rem;
+  place-self: center;
+  border-color: #FCC108;
+  color: #FCC108;
+  transition: color 300ms, background-color 500ms;
+}
+.login__form .btn-login:hover {
+  color: #fff;
+  background-color: #FCC108;
+}
 
 /*# sourceMappingURL=index.css.map */

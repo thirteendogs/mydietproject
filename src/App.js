@@ -5,6 +5,7 @@ import Footer from './components/globals/Footer'
 import Meals from './components/pages/Meals'
 import IngredientsList from './components/pages/IngredientsList'
 import IngredientChoose from './components/pages/IngredientChoose'
+import Login from './components/pages/Login'
 import loginService from './services/login'
 import mealService from './services/meals'
 
@@ -24,7 +25,6 @@ const App = () => {
 
   const handleLogin = async (event) => {
     event.preventDefault()
-    console.log('logging in with', username, password)
 
     try {
       const user = await loginService.login({
@@ -43,33 +43,16 @@ const App = () => {
     }
   }
 
-  const loginForm = () => (
-    <main>
-       <section>
-          <form onSubmit={handleLogin}>
-             <label>Username: </label>
-             <input
-               type="text"
-               value={username}
-               name="Username"
-               onChange={e => setUsername(e.target.value)}
-             />
-             <label>Password: </label>
-             <input
-               type="password"
-               value={password}
-               name="Password"
-               onChange={e => setPassword(e.target.value)}
-             />
-             <button>Log in</button>
-          </form>
-       </section>
-    </main>
-  )
-
   return (
     <>
-    {user === null && loginForm()}
+    {user === null &&
+    <Login
+      handleLogin={handleLogin}
+      username={username}
+      setUsername={setUsername}
+      password={password}
+      setPassword={setPassword}
+    />}
     {user !== null &&
 
       <Router>
