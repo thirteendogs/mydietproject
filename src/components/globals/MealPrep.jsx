@@ -66,7 +66,7 @@ const MealPrep = ({ meals, mealsTotalMacros }) => {
                   fats={mealsTotalMacros.fats}
                 />
 
-                <button className='btn' onClick={handleAddMeal}>Add Meal</button>
+                <button id='add__meal' className='btn' onClick={handleAddMeal}>Add Meal</button>
 
                 </div>
             </article>

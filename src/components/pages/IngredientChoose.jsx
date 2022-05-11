@@ -78,12 +78,12 @@ const IngredientChoose = () => {
 
                <form className='ingredientsChoose__form'onSubmit={handleAddIngredient}>
                   <label className='ingredientsChoose__form__label' htmlFor="igredient">Ingredient :</label>
-                     <select className='input' name='select'size={1} ref={selectIngredientRef} onChange={ingredientChart}>
+                     <select className='input' name='select' size={1} ref={selectIngredientRef} onChange={ingredientChart}>
                         {ingredients.map(ingredient => { return <option key={ingredient.id} >{ingredient.name}</option> })}
                      </select>
                   <label className='ingredientsChoose__form__label' htmlFor="quantity">Quantity :</label>
-                  <input className='input' type="number" ref={quantityRef} onChange={handleIngredientCuantity} value={quantity}></input>
-                  <button className='btn'>Add Ingredient</button>
+                  <input name='quantity' className='input' type="number" ref={quantityRef} onChange={handleIngredientCuantity} value={quantity}></input>
+                  <button id='add__ingredient' className='btn'>Add Ingredient</button>
                </form>
 
                <div className='ingredientsChoose__charm'>

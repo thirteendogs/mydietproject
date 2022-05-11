@@ -23,7 +23,7 @@ const Login = ({ handleLogin, username, setUsername, password, setPassword }) =>
                   name="Password"
                   onChange={e => setPassword(e.target.value)}
                />
-               <button className='btn btn-login'>Log in</button>
+               <button id='login-button'className='btn btn-login'>Log in</button>
             </form>
          </section>
       </main>

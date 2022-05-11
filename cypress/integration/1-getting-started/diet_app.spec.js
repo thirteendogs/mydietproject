@@ -1,0 +1,43 @@
+describe('My diet app', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000')
+  })
+  it('login page can be opened', () => {
+    cy.contains('my diet app')
+    cy.contains('Username')
+    cy.contains('Password')
+  })
+  it('logged in and navigation', () => {
+    cy.get('[name="Username"]').type('testcypress')
+    cy.get('[name="Password"]').type('testcypress')
+    cy.get('#login-button').click()
+
+    cy.contains('Select your ingredients')
+    cy.contains('Ingredient')
+    cy.contains('Quantity')
+    cy.contains('% of macronutrients')
+    cy.contains('Peas')
+    cy.get('#add__ingredient').click()
+    cy.get('#add__meal').click()
+    cy.get('[aria-label="meals"]').click()
+    cy.contains('Meals')
+    cy.contains('Ingredients')
+    cy.contains('Peas')
+    cy.contains('Prots: 5.0g')
+    cy.contains('Carbs: 14.0g')
+    cy.contains('Fats: 0.4g')
+    cy.contains('Calories: 81.0g')
+    cy.get('[aria-label="ingredients"]').click()
+    cy.contains('Chicken breast')
+  })
+
+  it('logged off', () => {
+    cy.get('[name="Username"]').type('test')
+    cy.get('[name="Password"]').type('test')
+    cy.get('#login-button').click()
+    cy.get('.btn-log-out').click()
+    cy.contains('my diet app')
+    cy.contains('Username')
+    cy.contains('Password')
+  })
+})

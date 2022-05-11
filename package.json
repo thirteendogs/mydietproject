@@ -16,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "sass": "sass --watch src/styles/sass/main.scss src/index.css",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -39,8 +40,10 @@
   "devDependencies": {
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.2.0",
+    "cypress": "^9.6.1",
     "eslint": "8.15.0",
     "eslint-config-standard": "17.0.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-n": "15.2.0",
     "eslint-plugin-promise": "6.0.0",

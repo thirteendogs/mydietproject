@@ -6,6 +6,7 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
+    'plugin:cypress/recommended',
     'standard'
   ],
   parserOptions: {
@@ -16,7 +17,8 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'react'
+    'react',
+    'cypress'
   ],
   rules: {
   }
