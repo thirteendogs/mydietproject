@@ -117,6 +117,10 @@ p {
   background-color: #28a745;
 }
 
+.dark-text {
+  color: #333333;
+}
+
 .badge {
   margin-top: 2rem;
   margin-inline: 0.5rem;
@@ -144,6 +148,10 @@ p {
 }
 .table tfoot, .table thead {
   border-top: 5px solid #dee2e6;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 500px) {

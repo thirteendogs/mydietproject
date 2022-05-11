@@ -2,12 +2,14 @@ import React, { useState, useRef, useEffect } from 'react'
 import ingredientService from '../../services/ingredients'
 import IngredientInfo from '../globals/IngredientInfo'
 import MealPrep from '../globals/MealPrep'
+import Select from 'react-select'
 
 const IngredientChoose = () => {
   const [ingredients, setIngredients] = useState([])
   const [selectedIngredient, setSelectedIngredient] = useState({})
   const [quantity, setQuantity] = useState(100)
   const [meals, setMeals] = useState([])
+  const [selectOptions, setSelectOptions] = useState([])
   const [mealsTotalMacros, setMealsTotalMacros] = useState({
     proteins: 0,
     carbohydrates: 0,
@@ -24,11 +26,11 @@ const IngredientChoose = () => {
       .then(({ data }) => {
         setIngredients(data)
         setSelectedIngredient(data[0])
+        setSelectOptions(data.map(data => ({ value: data.name, label: data.name })))
       })
   }, [])
-
   const ingredientChart = () => {
-    const selectedIngredients = selectIngredientRef.current.value
+    const selectedIngredients = selectIngredientRef.current.state.focusedOption.value
 
     ingredients.map(ingredient => ingredient.name.match(selectedIngredients)
       ? setSelectedIngredient(ingredient)
@@ -78,9 +80,7 @@ const IngredientChoose = () => {
 
                <form className='ingredientsChoose__form'onSubmit={handleAddIngredient}>
                   <label className='ingredientsChoose__form__label' htmlFor="igredient">Ingredient :</label>
-                     <select className='input' name='select' size={1} ref={selectIngredientRef} onChange={ingredientChart}>
-                        {ingredients.map(ingredient => { return <option key={ingredient.id} >{ingredient.name}</option> })}
-                     </select>
+                     <Select className='mb-1 dark-text' options={selectOptions} ref={selectIngredientRef} onChange={ingredientChart} maxMenuHeight={100}/>
                   <label className='ingredientsChoose__form__label' htmlFor="quantity">Quantity :</label>
                   <input name='quantity' className='input' type="number" ref={quantityRef} onChange={handleIngredientCuantity} value={quantity}></input>
                   <button id='add__ingredient' className='btn'>Add Ingredient</button>

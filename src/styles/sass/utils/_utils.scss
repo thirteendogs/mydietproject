@@ -68,6 +68,10 @@
    background-color: $green-clr;
 }
 
+.dark-text {
+   color: $dark-clr;
+}
+
 .badge {
    margin-top: 2rem;
    margin-inline: .5rem;
@@ -100,6 +104,10 @@
       border-top: 5px solid #dee2e6;
 
    }
+}
+
+.mb-1 {
+   margin-bottom: 1rem;
 }
 
 @media (max-width: 500px) {
