@@ -1,10 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import IngredientInfo from './IngredientInfo'
+import mealsServices from '../../services/meals'
 
 const MealPrep = ({ meals, mealsTotalMacros }) => {
   const handleAddMeal = () => {
-    console.log('Meal added!')
+    const ingredients = meals.map(meal => meal.name)
+    const newMeal = {
+      ingredients,
+      proteins: mealsTotalMacros.proteins,
+      carbohydrates: mealsTotalMacros.carbohydrates,
+      fats: mealsTotalMacros.fats,
+      calories: mealsTotalMacros.calories
+    }
+    mealsServices
+      .addMeal(newMeal)
   }
   return (
       <section className='mealPrep card'>
@@ -26,11 +36,11 @@ const MealPrep = ({ meals, mealsTotalMacros }) => {
                     {meals.map((meal, i) => (
                       <tr key={i}>
                         <th scope="row">{meal.name}</th>
-                        <td>{meal.quantity}</td>
-                        <td>{meal.proteins}</td>
-                        <td>{meal.carbohydrates}</td>
-                        <td>{meal.fats}</td>
-                        <td>{meal.calories}</td>
+                        <td>{Number(meal.quantity).toFixed(1)}</td>
+                        <td>{Number(meal.proteins).toFixed(1)}</td>
+                        <td>{Number(meal.carbohydrates).toFixed(1)}</td>
+                        <td>{Number(meal.fats).toFixed(1)}</td>
+                        <td>{Number(meal.calories).toFixed(1)}</td>
                       </tr>
                     ))}
                   </tbody>

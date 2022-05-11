@@ -8,7 +8,7 @@ const setToken = newToken => {
   token = `bearer ${newToken}`
 }
 
-const create = async newObject => {
+const addMeal = async newObject => {
   const config = {
     headers: { Authorization: token }
   }
@@ -24,6 +24,6 @@ const getAllmeals = () => {
 
 export default {
   getAllmeals,
-  create,
+  addMeal,
   setToken
 }
