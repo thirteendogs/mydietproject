@@ -34,6 +34,24 @@
       }
 }
 
+.btn-log-out {
+   border: 2px $red-clr solid;
+   border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+   width: fit-content;
+   background-color: transparent;
+   color: $red-clr;
+   font-family: $hand-font;
+   font-size: 1.2rem;
+   font-weight: bold;
+   padding: .5rem;
+   cursor: pointer;
+   transition: color 300ms, background-color 300ms;
+
+      &:hover {
+       color: $light-clr;
+       background-color: $red-clr;  
+      }
+}
 .bg-red {
    background-color: $red-clr;
 }

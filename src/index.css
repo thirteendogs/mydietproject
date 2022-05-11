@@ -83,6 +83,24 @@ p {
   background-color: #28a745;
 }
 
+.btn-log-out {
+  border: 2px #DC3544 solid;
+  border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
+  width: fit-content;
+  background-color: transparent;
+  color: #DC3544;
+  font-family: "Handlee", cursive;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: color 300ms, background-color 300ms;
+}
+.btn-log-out:hover {
+  color: #fff;
+  background-color: #DC3544;
+}
+
 .bg-red {
   background-color: #DC3544;
 }

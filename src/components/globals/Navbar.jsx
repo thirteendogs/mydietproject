@@ -21,6 +21,12 @@ const Navbar = () => {
   const handleNavToggle = () => {
     setClick(!click)
   }
+
+  const handleLogOut = () => {
+    window.localStorage.removeItem('loggedDietAppUser')
+    window.location.reload(false)
+  }
+
   return (
     <header id='home-page'>
       <nav aria-label='Main navigation' className='navbar'>
@@ -41,6 +47,9 @@ const Navbar = () => {
             </li>
             <li className='navbar__menu__item'>
               <Link to='/ingredientsList' className='navbar__menu__link'>INGREDIENTS</Link>
+            </li>
+            <li className='navbar__menu__item'>
+              <button className='btn-log-out' onClick={handleLogOut}>Log out</button>
             </li>
           </ul>
 

@@ -11,7 +11,7 @@ const Meals = () => {
         setMeals(data)
       })
   }, [])
-  console.log(meals)
+
   return (
     <main className='meals'>
       <h2 className='meals__title'>Meals</h2>
