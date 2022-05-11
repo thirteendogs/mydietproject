@@ -1,4 +1,4 @@
-# mydietproject
+# mydietproject (under construction...)
 ##  ABOUT
 ### This is a personal project with the idea to make an app to count calories.
 ### Frontend tech is: React.js, SASS, axios, react-testing-library and cypress
