@@ -2,9 +2,9 @@
 ##  ABOUT
 This is a personal project with the idea to make an app to count calories.
 
-Frontend tech is: React.js, SASS, axios, react-testing-library and cypress
+Frontend tech: React.js, SASS, axios, react-testing-library and cypress
 
-Backend tech is: node with mongo and mongoose
+Backend tech: node with mongo and mongoose
 
 ##  HOW DOES IT WORK
 - Choose de ingredient and its quantity, after it you can see how the charm is updated, then press Add Ingredient button.
