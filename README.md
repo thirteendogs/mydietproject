@@ -16,9 +16,13 @@ This is a personal project with the idea to make an app to count calories.
 
 ##  SCRIPTS
 **npm start** (to start the app)
+
 **npm run sass** (to start sass engine)
+
 **npm run build** (to make production build)
+
 **npm run test** (to run the test)
+
 **npm run crypres:open** (to run E2E test with cypress)
 
 ##  TODOs
