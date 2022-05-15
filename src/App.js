@@ -16,7 +16,7 @@ const App = () => {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem('loggedDietAppUser')
+    const loggedUserJSON = window.sessionStorage.getItem('loggedDietAppUser')
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
       setUser(user)
@@ -32,7 +32,7 @@ const App = () => {
         username, password
       })
 
-      window.localStorage.setItem(
+      window.sessionStorage.setItem(
         'loggedDietAppUser', JSON.stringify(user)
       )
       mealService.setToken(user.token)
