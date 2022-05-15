@@ -3,6 +3,7 @@ import ingredientService from '../../services/ingredients'
 import IngredientInfo from '../globals/IngredientInfo'
 import MealPrep from '../globals/MealPrep'
 import Select from 'react-select'
+import { toast } from 'react-toastify'
 
 const IngredientChoose = () => {
   const [ingredients, setIngredients] = useState([])
@@ -57,7 +58,7 @@ const IngredientChoose = () => {
     }
 
     if (meals.length === maxIngredients) {
-      console.log('Can not add more ingredients')
+      toast.error('Can not add more ingredients', { autoClose: 1500, theme: 'dark' })
     } else {
       setMeals([...meals, newMeal])
       setMealsTotalMacros(
@@ -68,6 +69,7 @@ const IngredientChoose = () => {
           calories: mealsTotalMacros.calories + newMeal.calories
         }
       )
+      toast.success('Ingredient added', { autoClose: 1500, theme: 'dark' })
     }
   }
 
@@ -80,7 +82,14 @@ const IngredientChoose = () => {
 
                <form className='ingredientsChoose__form'onSubmit={handleAddIngredient}>
                   <label className='ingredientsChoose__form__label' htmlFor="igredient">Ingredient :</label>
-                     <Select className='mb-1 dark-text' options={selectOptions} ref={selectIngredientRef} onChange={ingredientChart} maxMenuHeight={100}/>
+                     <Select
+                      className='mb-1 dark-text'
+                      options={selectOptions}
+                      ref={selectIngredientRef}
+                      onChange={ingredientChart}
+                      maxMenuHeight={100}
+                      defaultValue={selectOptions[0]}
+                     />
                   <label className='ingredientsChoose__form__label' htmlFor="quantity">Quantity :</label>
                   <input name='quantity' className='input' type="number" ref={quantityRef} onChange={handleIngredientCuantity} value={quantity}></input>
                   <button id='add__ingredient' className='btn'>Add Ingredient</button>

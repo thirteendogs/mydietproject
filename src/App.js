@@ -8,6 +8,7 @@ import IngredientChoose from './components/pages/IngredientChoose'
 import Login from './components/pages/Login'
 import loginService from './services/login'
 import mealService from './services/meals'
+import { toast, ToastContainer } from 'react-toastify'
 
 const App = () => {
   const [username, setUsername] = useState('')
@@ -38,8 +39,9 @@ const App = () => {
       setUser(user)
       setUsername('')
       setPassword('')
+      toast.success('Login succeful', { autoClose: 1500, theme: 'colored' })
     } catch (exception) {
-      console.error('Wrong credentials')
+      toast.error('Wrong creadentials!', { autoClose: 1500, theme: 'colored' })
     }
   }
 
@@ -65,6 +67,7 @@ const App = () => {
         <Footer />
       </Router>
     }
+    <ToastContainer />
     </>
   )
 }

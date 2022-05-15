@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import IngredientInfo from './IngredientInfo'
 import mealsServices from '../../services/meals'
+import { toast } from 'react-toastify'
 
 const MealPrep = ({ meals, mealsTotalMacros }) => {
   const handleAddMeal = () => {
@@ -15,6 +16,7 @@ const MealPrep = ({ meals, mealsTotalMacros }) => {
     }
     mealsServices
       .addMeal(newMeal)
+    toast.success('Meal added!', { autoClose: 1500, theme: 'dark' })
   }
   return (
       <section className='mealPrep card'>
