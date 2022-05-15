@@ -23,8 +23,8 @@ const Navbar = () => {
   }
 
   const handleLogOut = () => {
-    window.localStorage.removeItem('loggedDietAppUser')
-    window.location.reload(false)
+    window.localStorage.clear()
+    window.location.reload()
   }
 
   return (
