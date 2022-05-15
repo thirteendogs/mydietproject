@@ -509,21 +509,25 @@ p {
   }
 }
 .login {
-  display: grid;
-  place-content: center;
+  display: flex;
   min-height: 100vh;
+  flex-direction: column;
+  place-items: center;
+  gap: 2rem;
 }
 .login__title {
-  position: absolute;
-  top: 0;
+  margin-top: 3rem;
   font-family: "Cabin Sketch", cursive;
   font-size: 4rem;
-  place-self: center;
+  height: fit-content;
+  width: fit-content;
 }
 .login__box {
   border: 3px #FCC108 solid;
   border-radius: 255px 25px 225px 25px/25px 225px 25px 255px;
   padding: 2rem;
+  max-width: 20rem;
+  max-height: 30rem;
 }
 .login__form {
   display: flex;
