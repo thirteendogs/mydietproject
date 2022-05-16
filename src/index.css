@@ -178,11 +178,14 @@ p {
   z-index: 10;
 }
 .navbar__container {
+  background-color: #333333;
   padding-inline: 2rem;
   max-width: 1700px;
   position: fixed;
   display: inherit;
   width: inherit;
+  height: 100%;
+  max-height: 7rem;
   justify-content: space-between;
   align-items: center;
 }

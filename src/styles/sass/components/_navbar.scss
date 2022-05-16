@@ -12,11 +12,14 @@
    z-index: 10;
    
    &__container {
+      background-color: $dark-clr;
       padding-inline: 2rem;
       max-width: $content-max-width;
       position: fixed;
       display: inherit;
       width: inherit;
+      height: 100%;
+      max-height: 7rem;
       justify-content: space-between;
       align-items: center;
    }
@@ -36,7 +39,6 @@
    }
 
    .visible {
-       
        transition: transform 350ms;
     }
     .notvisible {
