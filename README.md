@@ -4,10 +4,10 @@ This is a personal project with the idea to make an app to count calories.
 
 **Frontend tech:** React.js, SASS, axios, react-testing-library and cypress
 
-**Backend tech:** node with mongo and mongoose
+**Backend tech:** node, express, mongodb and mongoose
 
 ##  HOW DOES IT WORK
-- Choose de ingredient and its quantity, after it you can see how the charm is updated, then press Add Ingredient button.
+- Choose the ingredient and quantity, after it you can see how the charm is updated, then press Add Ingredient button.
 - Now you can see that the ingredient went to the table form Plan you meal section
 - You can add up to 10 ingredients per meal
 - Once you are done adding ingredients press the button Add Meal
@@ -26,7 +26,6 @@ This is a personal project with the idea to make an app to count calories.
 - **npm run crypres:open** (to run E2E test with cypress)
 
 ##  TODOs
-- Add notifications for event like login in, login out etc.
 - Add more ingredients.
 - Posibility to remove meals.
 - Add new section to configure your diet.

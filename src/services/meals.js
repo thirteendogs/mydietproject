@@ -1,6 +1,11 @@
 import axios from 'axios'
 
-const baseUrl = 'https://rocky-bastion-04545.herokuapp.com/api/meals'
+const URL_MEALS = 'https://rocky-bastion-04545.herokuapp.com/api/meals'
+const URL_USERS = 'https://rocky-bastion-04545.herokuapp.com/api/users'
+
+const getUsername = () => {
+  return JSON.parse(window.sessionStorage.getItem('loggedDietAppUser')).username
+}
 
 let token = null
 
@@ -13,13 +18,17 @@ const addMeal = async newObject => {
     headers: { Authorization: token }
   }
 
-  const response = await axios.post(baseUrl, newObject, config)
+  const response = await axios.post(URL_MEALS, newObject, config)
   return response.data
 }
 
-const getAllmeals = () => {
-  return axios
-    .get(baseUrl)
+const getAllmeals = async (loggedUser) => {
+  const { data } = await axios.get(URL_USERS)
+
+  const userMealsFilter = data.filter(({ username }) => username === getUsername())
+  const userMeals = userMealsFilter.map(({ meals }) => [meals])
+
+  return userMeals[0][0]
 }
 
 export default {
