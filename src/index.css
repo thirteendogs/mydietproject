@@ -188,6 +188,7 @@ p {
   max-height: 7rem;
   justify-content: space-between;
   align-items: center;
+  top: 0;
 }
 .navbar__logo {
   display: inherit;
