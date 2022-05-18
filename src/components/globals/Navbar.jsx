@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { GiHamburger } from 'react-icons/gi'
+import { toast } from 'react-toastify'
 
 const Navbar = () => {
   const [click, setClick] = useState(false)
   const [show, setShow] = useState(true)
+  const [logout, setLogout] = useState(false)
 
   let prevScrollpos = window.pageYOffset
   window.onscroll = function () {
@@ -24,10 +26,15 @@ const Navbar = () => {
 
   const handleLogOut = () => {
     window.sessionStorage.clear()
-    window.location.reload()
+    setLogout(true)
+    toast.success('Log out succeful', { autoClose: 1500, theme: 'colored' })
   }
 
   return (
+    <>
+      {logout && (
+        <Navigate to='/' replace={true}/>
+      )}
     <header id='home-page'>
       <nav aria-label='Main navigation' className='navbar'>
 
@@ -57,6 +64,7 @@ const Navbar = () => {
 
       </nav>
     </header>
+    </>
   )
 }
 

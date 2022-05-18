@@ -514,7 +514,7 @@ p {
 }
 .login {
   display: flex;
-  min-height: 100vh;
+  min-height: 95vh;
   flex-direction: column;
   place-items: center;
   gap: 2rem;

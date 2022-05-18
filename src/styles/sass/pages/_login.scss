@@ -2,7 +2,7 @@
 
 .login {
    display: flex;
-   min-height: 100vh;
+   min-height: 95vh;
    flex-direction: column;
    place-items: center;
    gap: 2rem;
@@ -44,10 +44,10 @@
          place-self: center;
          border-color: $yellow-clr;
          color: $yellow-clr;
-         transition: color 300ms, background-color 500ms; 
+         transition: color 300ms, background-color 500ms;
 
          &:hover {
-            color:$light-clr;
+            color: $light-clr;
             background-color: $yellow-clr;
          }
       }

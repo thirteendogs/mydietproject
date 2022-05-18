@@ -1,9 +1,51 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { createContext, useEffect, useState } from 'react'
+import loginService from '../../services/login'
+import mealService from '../../services/meals'
+import { toast } from 'react-toastify'
+import { Navigate } from 'react-router-dom'
 
-const Login = ({ handleLogin, username, setUsername, password, setPassword }) => {
+export const UserContext = createContext()
+const Login = () => {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    const loggedUserJSON = window.sessionStorage.getItem('loggedDietAppUser')
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      setUser(user)
+      mealService.setToken(user.token)
+    }
+  }, [])
+  const handleLogin = async (event) => {
+    event.preventDefault()
+
+    try {
+      const user = await loginService.login({
+        username, password
+      })
+
+      window.sessionStorage.setItem(
+        'loggedDietAppUser', JSON.stringify(user)
+      )
+      mealService.setToken(user.token)
+      setUser(user)
+      setUsername('')
+      setPassword('')
+      toast.success('Login succeful', { autoClose: 1500, theme: 'colored' })
+    } catch (exception) {
+      toast.error('Wrong creadentials!', { autoClose: 1500, theme: 'colored' })
+    }
+  }
+
   return (
+   <>
+     {user && (
+        <Navigate to='ingredientChoose' replace={true}/>
+     )}
       <main className='login'>
+
          <h1 className='login__title'>my diet app</h1>
          <section className='login__box'>
             <form className='login__form' onSubmit={handleLogin}>
@@ -25,17 +67,10 @@ const Login = ({ handleLogin, username, setUsername, password, setPassword }) =>
                />
                <button id='login-button'className='btn btn-login'>Log in</button>
             </form>
+
          </section>
       </main>
+   </>
   )
 }
-
-Login.propTypes = {
-  handleLogin: PropTypes.func,
-  username: PropTypes.string,
-  setUsername: PropTypes.func,
-  password: PropTypes.string,
-  setPassword: PropTypes.func
-}
-
 export default Login
