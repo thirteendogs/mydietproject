@@ -1,17 +1,16 @@
-import React, { useState, useRef, useEffect } from 'react'
-import ingredientService from '../../services/ingredients'
+import React, { useState, useRef } from 'react'
+import Navbar from '../globals/Navbar'
 import IngredientInfo from '../globals/IngredientInfo'
 import MealPrep from '../globals/MealPrep'
 import Select from 'react-select'
 import { toast } from 'react-toastify'
-import Navbar from '../globals/Navbar'
+import useIngredients from '../../hooks/useIngredients'
 
 const IngredientChoose = () => {
-  const [ingredients, setIngredients] = useState([])
-  const [selectedIngredient, setSelectedIngredient] = useState({})
+  const { selectedIngredient, selectOptions, ingredientChart, selectIngredientRef } = useIngredients()
+
   const [quantity, setQuantity] = useState(100)
   const [meals, setMeals] = useState([])
-  const [selectOptions, setSelectOptions] = useState([])
   const [mealsTotalMacros, setMealsTotalMacros] = useState({
     proteins: 0,
     carbohydrates: 0,
@@ -19,25 +18,7 @@ const IngredientChoose = () => {
     calories: 0
   })
 
-  const selectIngredientRef = useRef()
   const quantityRef = useRef()
-
-  useEffect(() => {
-    ingredientService
-      .getAllIngredients()
-      .then(({ data }) => {
-        setIngredients(data)
-        setSelectedIngredient(data[0])
-        setSelectOptions(data.map(data => ({ value: data.name, label: data.name })))
-      })
-  }, [])
-  const ingredientChart = () => {
-    const selectedIngredients = selectIngredientRef.current.state.focusedOption.value
-
-    ingredients.map(ingredient => ingredient.name.match(selectedIngredients)
-      ? setSelectedIngredient(ingredient)
-      : {})
-  }
 
   const handleIngredientCuantity = (e) => {
     const quantityValue = e.target.value
