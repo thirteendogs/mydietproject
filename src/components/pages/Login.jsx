@@ -1,10 +1,9 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import loginService from '../../services/login'
 import mealService from '../../services/meals'
 import { toast } from 'react-toastify'
 import { Navigate } from 'react-router-dom'
 
-export const UserContext = createContext()
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
