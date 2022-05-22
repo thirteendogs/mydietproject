@@ -50,12 +50,12 @@ const IngredientPrep = (
 IngredientPrep.propTypes = {
   handleAddIngredient: PropTypes.func,
   selectOptions: PropTypes.array,
-  selectIngredientRef: PropTypes.string,
+  selectIngredientRef: PropTypes.object,
   ingredientChart: PropTypes.func,
-  quantityRef: PropTypes.string,
+  quantityRef: PropTypes.object,
   handleIngredientCuantity: PropTypes.func,
   quantity: PropTypes.number,
-  selectedIngredient: PropTypes.string
+  selectedIngredient: PropTypes.object
 
 }
 export default IngredientPrep
