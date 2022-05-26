@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react'
 import ingredientService from '../../services/ingredients'
-import IngredientInfo from '../globals/IngredientInfo'
+// import IngredientInfo from '../globals/IngredientInfo'
+import IngredientsPrep from '../globals/IngredientsPrep'
 import MealPrep from '../globals/MealPrep'
-import Select from 'react-select'
+// import Select from 'react-select'
 import { toast } from 'react-toastify'
 import Navbar from '../globals/Navbar'
 
@@ -82,36 +83,17 @@ const IngredientChoose = () => {
       <Navbar />
       <main className='ingredients'>
         {/* CHOOSE YOUR INGREDIENT SECTION */}
-        <section className='ingredientsChoose card'>
-          <h2 className='ingredientsChoose__title'>Select your ingredients</h2>
-
-          <form className='ingredientsChoose__form' onSubmit={handleAddIngredient}>
-            <label className='ingredientsChoose__form__label' htmlFor="igredient">Ingredient :</label>
-            {loading && <p>Loading...</p>}
-            {!loading &&
-            <Select
-              className='mb-1 dark-text'
-              options={selectOptions}
-              ref={selectIngredientRef}
-              onChange={ingredientChart}
-              maxMenuHeight={100}
-              defaultValue={selectOptions[0]}
-            />
-            }
-            <label className='ingredientsChoose__form__label' htmlFor="quantity">Quantity :</label>
-            <input name='quantity' className='input' type="number" ref={quantityRef} onChange={handleIngredientCuantity} value={quantity}></input>
-            <button id='add__ingredient' className='btn'>Add Ingredient</button>
-          </form>
-
-          <div className='ingredientsChoose__charm'>
-            <h3 className='ingredientsChoose__charm__title'>% of macronutrients</h3>
-            <IngredientInfo
-              proteins={selectedIngredient.proteins}
-              carbohydrates={selectedIngredient.carbohydrates}
-              fats={selectedIngredient.fats}
-            />
-          </div>
-        </section>
+        <IngredientsPrep
+          handleAddIngredient={handleAddIngredient}
+          ingredientChart={ingredientChart}
+          loading={loading}
+          quantity={quantity}
+          quantityRef={quantityRef}
+          selectIngredientRef={selectIngredientRef}
+          handleIngredientCuantity={handleIngredientCuantity}
+          selectOptions={selectOptions}
+          selectedIngredient={selectedIngredient}
+        />
         {/* PLAN YOUR MEAL SECTION */}
         <MealPrep meals={meals} mealsTotalMacros={mealsTotalMacros} />
       </main>
