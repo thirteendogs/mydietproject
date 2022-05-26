@@ -1,42 +1,40 @@
 import React from 'react'
-import useCharm from '../../hooks/useCharm'
-import Navbar from '../globals/Navbar'
+import IngredientsPrep from '../globals/IngredientsPrep'
 import MealPrep from '../globals/MealPrep'
-import useAddIngredient from '../../hooks/useAddIngredient'
-import IngredientPrep from '../globals/IngredientPrep'
+import Navbar from '../globals/Navbar'
+import useIngredients from '../hooks/useIngredients'
+import useAddIngredient from '../hooks/useAddIngredient'
 
 const IngredientChoose = () => {
-  const {
-    selectedIngredient,
-    selectOptions,
-    ingredientChart,
-    selectIngredientRef
-  } = useCharm()
-
+  const { ingredients } = useIngredients()
   const {
     handleAddIngredient,
+    ingredientChart,
+    quantity,
     quantityRef,
     handleIngredientCuantity,
-    quantity,
+    selectOptions,
+    selectedIngredient,
     meals,
-    mealsTotalMacros
-  } = useAddIngredient()
+    mealsTotalMacros,
+    selectIngredientRef
+  } = useAddIngredient({ ingredients })
 
   return (
     <>
       <Navbar />
       <main className='ingredients'>
         {/* CHOOSE YOUR INGREDIENT SECTION */}
-        <IngredientPrep
+        <IngredientsPrep
+        selectIngredientRef={selectIngredientRef}
           handleAddIngredient={handleAddIngredient}
-          handleIngredientCuantity={handleIngredientCuantity}
           ingredientChart={ingredientChart}
-          selectedIngredient={selectedIngredient}
-          selectIngredientRef={selectIngredientRef}
-          selectOptions={selectOptions}
           quantity={quantity}
           quantityRef={quantityRef}
-          />
+          handleIngredientCuantity={handleIngredientCuantity}
+          selectOptions={selectOptions}
+          selectedIngredient={selectedIngredient}
+        />
         {/* PLAN YOUR MEAL SECTION */}
         <MealPrep
           meals={meals}
