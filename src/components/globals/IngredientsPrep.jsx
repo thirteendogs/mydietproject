@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import Select from 'react-select'
 import IngredientInfo from './IngredientInfo'
 import PropTypes from 'prop-types'
@@ -8,14 +8,13 @@ const IngredientsPrep = (
     handleAddIngredient,
     selectOptions,
     ingredientChart,
-    quantityRef,
     handleIngredientCuantity,
     quantity,
-    selectedIngredient
+    selectedIngredient,
+    selectIngredientRef,
+    quantityRef
   }
 ) => {
-  const selectIngredientRef = useRef()
-
   return (
      <section className='ingredientsChoose card'>
           <h2 className='ingredientsChoose__title'>Select your ingredients</h2>
