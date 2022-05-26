@@ -38,7 +38,7 @@ const MealPrep = ({ meals, mealsTotalMacros }) => {
                     {meals.map((meal, i) => (
                       <tr key={i}>
                         <th scope="row">{meal.name}</th>
-                        <td>{Number(meal.quantity).toFixed(1)}</td>
+                        <td>{Number(meal.quantity)}</td>
                         <td>{Number(meal.proteins).toFixed(1)}</td>
                         <td>{Number(meal.carbohydrates).toFixed(1)}</td>
                         <td>{Number(meal.fats).toFixed(1)}</td>

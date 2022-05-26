@@ -1,10 +1,11 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import IngredientsList from '../../pages/IngredientsList'
+import { BrowserRouter as Route } from 'react-router-dom'
 
 describe('IngredientsList component', () => {
   beforeEach(() => {
-    render(<IngredientsList />)
+    render(<Route><IngredientsList /></Route>)
   })
 
   test('IngredientsList to have correct text', () => {

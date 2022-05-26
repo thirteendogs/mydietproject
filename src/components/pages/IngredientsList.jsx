@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import ingredientService from '../../services/ingredients'
+import React from 'react'
+import useIngredients from '../../hooks/useIngredients'
+
 import Navbar from '../globals/Navbar'
 
 const IngredientsList = () => {
-  const [ingredients, setIngredients] = useState([])
-
-  useEffect(() => {
-    ingredientService
-      .getAllIngredients()
-      .then(({ data }) => {
-        setIngredients(data)
-      })
-  }, [])
+  const { ingredients } = useIngredients()
 
   return (
     <>

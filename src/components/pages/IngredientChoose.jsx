@@ -36,7 +36,10 @@ const IngredientChoose = () => {
           selectedIngredient={selectedIngredient}
         />
         {/* PLAN YOUR MEAL SECTION */}
-        <MealPrep meals={meals} mealsTotalMacros={mealsTotalMacros} />
+        <MealPrep
+          meals={meals}
+          mealsTotalMacros={mealsTotalMacros}
+        />
       </main>
     </>
   )

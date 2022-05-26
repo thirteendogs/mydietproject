@@ -1,10 +1,12 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import IngredientChoose from '../../pages/IngredientChoose'
+import { BrowserRouter as Route } from 'react-router-dom'
 
 describe('IngredientChoose component', () => {
   beforeEach(() => {
-    render(<IngredientChoose />)
+    render(<Route><IngredientChoose /></Route>
+    )
   })
 
   test('IngredientChoose to have correct title', () => {
