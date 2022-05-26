@@ -1,42 +1,35 @@
 import React, { useState, useRef, useEffect } from 'react'
-import ingredientService from '../../services/ingredients'
-// import IngredientInfo from '../globals/IngredientInfo'
 import IngredientsPrep from '../globals/IngredientsPrep'
 import MealPrep from '../globals/MealPrep'
-// import Select from 'react-select'
 import { toast } from 'react-toastify'
 import Navbar from '../globals/Navbar'
+import useIngredients from '../hooks/useIngredients'
 
 const IngredientChoose = () => {
-  const [ingredients, setIngredients] = useState([])
   const [selectedIngredient, setSelectedIngredient] = useState({})
   const [quantity, setQuantity] = useState(100)
   const [meals, setMeals] = useState([])
   const [selectOptions, setSelectOptions] = useState([])
-  const [loading, setLoading] = useState(false)
   const [mealsTotalMacros, setMealsTotalMacros] = useState({
     proteins: 0,
     carbohydrates: 0,
     fats: 0,
     calories: 0
   })
-  console.log('hola')
-  const selectIngredientRef = useRef()
+
+  const { ingredients } = useIngredients()
+
   const quantityRef = useRef()
 
   useEffect(() => {
-    setLoading(true)
-    ingredientService
-      .getAllIngredients()
-      .then(({ data }) => {
-        setIngredients(data)
-        setSelectedIngredient(data[0])
-        setSelectOptions(data.map(data => ({ value: data.name, label: data.name })))
-        setLoading(false)
-      })
-  }, [])
-  const ingredientChart = () => {
-    const selectedIngredients = selectIngredientRef.current.state.focusedOption.value
+    if (ingredients.length !== 0) {
+      setSelectedIngredient(ingredients[0])
+      setSelectOptions(ingredients.map(ingredient => ({ value: ingredient.name, label: ingredient.name })))
+    }
+  }, [ingredients])
+
+  const ingredientChart = (ref) => {
+    const selectedIngredients = ref.current.state.focusedOption.value
 
     ingredients.map(ingredient => ingredient.name.match(selectedIngredients)
       ? setSelectedIngredient(ingredient)
@@ -86,10 +79,8 @@ const IngredientChoose = () => {
         <IngredientsPrep
           handleAddIngredient={handleAddIngredient}
           ingredientChart={ingredientChart}
-          loading={loading}
           quantity={quantity}
           quantityRef={quantityRef}
-          selectIngredientRef={selectIngredientRef}
           handleIngredientCuantity={handleIngredientCuantity}
           selectOptions={selectOptions}
           selectedIngredient={selectedIngredient}
