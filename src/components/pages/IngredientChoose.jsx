@@ -12,23 +12,26 @@ const IngredientChoose = () => {
   const [quantity, setQuantity] = useState(100)
   const [meals, setMeals] = useState([])
   const [selectOptions, setSelectOptions] = useState([])
+  const [loading, setLoading] = useState(false)
   const [mealsTotalMacros, setMealsTotalMacros] = useState({
     proteins: 0,
     carbohydrates: 0,
     fats: 0,
     calories: 0
   })
-
+  console.log('hola')
   const selectIngredientRef = useRef()
   const quantityRef = useRef()
 
   useEffect(() => {
+    setLoading(true)
     ingredientService
       .getAllIngredients()
       .then(({ data }) => {
         setIngredients(data)
         setSelectedIngredient(data[0])
         setSelectOptions(data.map(data => ({ value: data.name, label: data.name })))
+        setLoading(false)
       })
   }, [])
   const ingredientChart = () => {
@@ -84,6 +87,8 @@ const IngredientChoose = () => {
 
           <form className='ingredientsChoose__form' onSubmit={handleAddIngredient}>
             <label className='ingredientsChoose__form__label' htmlFor="igredient">Ingredient :</label>
+            {loading && <p>Loading...</p>}
+            {!loading &&
             <Select
               className='mb-1 dark-text'
               options={selectOptions}
@@ -92,6 +97,7 @@ const IngredientChoose = () => {
               maxMenuHeight={100}
               defaultValue={selectOptions[0]}
             />
+            }
             <label className='ingredientsChoose__form__label' htmlFor="quantity">Quantity :</label>
             <input name='quantity' className='input' type="number" ref={quantityRef} onChange={handleIngredientCuantity} value={quantity}></input>
             <button id='add__ingredient' className='btn'>Add Ingredient</button>
