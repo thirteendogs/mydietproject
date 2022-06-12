@@ -2,7 +2,7 @@
 ##  ABOUT
 This is a personal project with the idea to make an app to count calories.
 
-**Frontend tech:** React.js, SASS, axios, react-testing-library and cypress
+**Frontend tech:** React.js, SASS, axios, jest, react-testing-library and cypress
 
 **Backend tech:** node, express, mongodb and mongoose
 
